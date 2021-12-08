@@ -6,7 +6,7 @@ const GoldController = {
 
 CreateCount: function (req,res) {
     GoldModel
-    .getCount("am")
+    .getGoldCount("am")
     .then(data=>{
         if (data === null){
             goldCount = {
@@ -14,7 +14,8 @@ CreateCount: function (req,res) {
                 identifier: "am"
             }
 
-            GoldModel.createCount(goldCount)
+            GoldModel
+            .createCount(goldCount)
             .then(data=>{
                 console.log(data);
                 res.status(200).json(data)
@@ -25,7 +26,7 @@ CreateCount: function (req,res) {
         }
         else{
 
-            res.status(200).json({msj: "Done"})
+            res.status(200).json({status: "Done"})
         }
     })
     .catch(err=>{
@@ -35,7 +36,8 @@ CreateCount: function (req,res) {
 },
 farm:function (req,res) {
 
-        GoldModel.getCount("am")
+        GoldModel
+        .getGoldCount("am")
         .then(data=>{
             if(data === null){
                 res.statusMessage = "You can not edit an option that doesn't exists";
@@ -51,7 +53,8 @@ farm:function (req,res) {
                     goldupdated = goldValue + randomNumber;
                     gold.goldcount = goldupdated //-----------------------
 
-                    GoldModel.updategold(data.identifier,gold)
+                    GoldModel
+                    .updategold(data.identifier,gold)
                     .then(data=>{
                         jsonInfo = {
                             goldupdated : randomNumber,
@@ -70,7 +73,8 @@ farm:function (req,res) {
 },
 cave:function (req,res) {
 
-    GoldModel.getCount("am")
+    GoldModel
+    .getGoldCount("am")
     .then(data=>{
         if(data === null){
             res.statusMessage = "You can not edit an option that doesn't exists";
@@ -86,7 +90,8 @@ cave:function (req,res) {
                 goldupdated = goldValue + randomNumber;
                 gold.goldcount = goldupdated //-----------------------
 
-                GoldModel.updategold(data.identifier,gold)
+                GoldModel
+                .updategold(data.identifier, gold)
                 .then(data=>{
                     jsonInfo = {
                         goldupdated : randomNumber,
@@ -106,7 +111,8 @@ cave:function (req,res) {
 
 casino:function (req,res) {
 
-    GoldModel.getCount("am")
+    GoldModel
+    .getGoldCount("am")
     .then(data=>{
         if(data === null){
             res.statusMessage = "You can not edit an option that doesn't exists";
@@ -122,7 +128,8 @@ casino:function (req,res) {
                 goldupdated = goldValue + randomNumber;
                 gold.goldcount = goldupdated //-----------------------
 
-                GoldModel.updategold(data.identifier,gold)
+                GoldModel
+                .updategold(data.identifier,gold)
                 .then(data=>{
                     jsonInfo = {
                         goldupdated : randomNumber,
@@ -141,7 +148,8 @@ casino:function (req,res) {
 },
 house:function (req,res) {
 
-    GoldModel.getCount("am")
+    GoldModel
+    .getGoldCount("am")
     .then(data=>{
         if(data === null){
             res.statusMessage = "You can not edit an option that doesn't exists";
@@ -157,7 +165,8 @@ house:function (req,res) {
                 goldupdated = goldValue + randomNumber;
                 gold.goldcount = goldupdated //-----------------------
 
-                GoldModel.updategold(data.identifier,gold)
+                GoldModel
+                .updategold(data.identifier,gold)
                 .then(data=>{
                     jsonInfo = {
                         goldupdated : randomNumber,
@@ -177,7 +186,8 @@ house:function (req,res) {
 
 reset:function (req,res) {
 
-    GoldModel.getCount("am")
+    GoldModel
+    .getGoldCount("am")
     .then(data=>{
         if(data === null){
             res.statusMessage = "You can not edit an option that doesn't exists";
@@ -188,7 +198,8 @@ reset:function (req,res) {
                 goldupdated = 0;
                 gold.goldcount = goldupdated //-----------------------
 
-                GoldModel.updategold(data.identifier,gold)
+                GoldModel
+                .updategold(data.identifier,gold)
                 .then(data=>{
                     res.status(200).json(data)
                 })

@@ -1,8 +1,5 @@
-//* REQUIRES
 const mongoose = require('mongoose');
 
-
-//*----------------CONSTRUCTOR-------------------------------------------------------------------------------------
 const GoldSchema = new mongoose.Schema({
 
     goldcount :{
@@ -14,34 +11,21 @@ const GoldSchema = new mongoose.Schema({
         required : true
     }
 
-
 });
-//*----------------CONSTRUCTOR END----------------------------------------------------------------------------------
+const NijaG = mongoose.model( 'ngold', GoldSchema );
 
-//*CONNECT COLLECTION
-const Gold = mongoose.model( 'golds', GoldSchema );
-
-
-//*----------------QUERYS------------------------------------------------------------------------------------------
-
-//?----------------(QUERYS FOR USERS)----------------------------
 const GoldModel = {
 
     createCount : function (count) {
-        return Gold.create(count) 
+        return NijaG.create(count) 
     },
-    getCount : function( identifier ){
-        return Gold.findOne({ identifier });
+    getGoldCount : function( identifier ){
+        return NijaG.findOne({ identifier });
     },
     updategold: function(identifier , goldupdated) {
-        return Gold.findOneAndUpdate({identifier}, {$set : goldupdated}, {new:true})
+        return NijaG.findOneAndUpdate({identifier}, {$set : goldupdated}, {new:true})
     }
-
-    //TODO INSERT MORE QUERYS
 
 }
 
-//*----------------QUERYS END--------------------------------------------------------------------------------------
-
-//* EXPORT MODEL (QUERY OBJECTS)
 module.exports = {GoldModel};
