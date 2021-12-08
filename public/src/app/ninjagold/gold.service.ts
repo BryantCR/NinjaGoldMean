@@ -9,27 +9,27 @@ export class GoldService {
   constructor(private _http: HttpClient) { }
 
   create(){
-    return this._http.get("http://localhost:8080/gold/firsttime")
+    return this._http.get("http://localhost:8080/ninjagold/firsttime")
   }
 
   farm(){
-    return this._http.get("http://localhost:8080/gold/farm")
+    return this._http.get("http://localhost:8080/ninjagold/farm")
   }
 
   cave(){
-    return this._http.get("http://localhost:8080/gold/cave")
+    return this._http.get("http://localhost:8080/ninjagold/cave")
   }
 
   casino(){
-    return this._http.get("http://localhost:8080/gold/casino")
+    return this._http.get("http://localhost:8080/ninjagold/casino")
   }
 
   house(){
-    return this._http.get("http://localhost:8080/gold/house")
+    return this._http.get("http://localhost:8080/ninjagold/house")
   }
 
   reset(){
-    return this._http.get("http://localhost:8080/gold/reset")
+    return this._http.get("http://localhost:8080/ninjagold/reset")
   }
 
 

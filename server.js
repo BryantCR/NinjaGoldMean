@@ -10,7 +10,7 @@ app.use( express.json() );
 
 require("./server/config/database.js");
 
-app.use( '/gold', NinjaGoldRouter );
+app.use( '/ninjagold', NinjaGoldRouter );
 
 app.listen(8080, function(){
     console.log("This server is working on port 8080");
