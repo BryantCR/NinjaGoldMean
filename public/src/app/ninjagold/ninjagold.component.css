@@ -1,0 +1,32 @@
+.count{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    width: 20%;
+}
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px 0px;
+    padding-bottom: 25px;
+}
+
+.msj2{
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px 0px;
+    padding-bottom: 25px;
+    overflow: scroll;
+    height: 200px;
+}
+
+.actions div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

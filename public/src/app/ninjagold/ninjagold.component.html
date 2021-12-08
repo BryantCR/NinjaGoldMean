@@ -1,0 +1,47 @@
+<div class="count">
+    <h1>Gold Count {{goldAmount}}</h1>
+</div>
+
+
+<div class="actions">
+    
+<div>
+    <h2>Farm</h2>
+    <p>Earns 2-5 Gold</p>
+        <button (click)="farm()">
+            Farm
+        </button>
+</div>
+    
+<div>
+    <h2>Cave</h2>
+    <p>Earns 5-10 Gold</p>
+        <button (click)="cave()">
+            Cave
+        </button>
+</div>
+    
+<div>
+    <h2>Casino</h2>
+    <p>Earn up to or Lose up to 100 Gold</p>
+        <button (click)="casino()">
+            Casino
+        </button>
+</div>
+    
+<div>
+    <h2>House</h2>
+    <p>Earns 7-15 Gold</p>
+        <button (click)="house()">
+            House
+        </button>
+</div>
+
+</div>
+
+
+<div class="msj2">
+    <div class="msj" *ngFor="let msj of messageList">
+        <h3>{{msj}}</h3>
+    </div>
+</div>
