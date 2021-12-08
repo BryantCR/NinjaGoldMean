@@ -10,7 +10,7 @@ export class NinjagoldComponent implements OnInit {
 
   goldAmount:number = 0
 
-  messageList:any = []
+  listMessages:any = []
 
   constructor(private _HttpService: GoldService) { }
 
@@ -37,7 +37,7 @@ export class NinjagoldComponent implements OnInit {
     this._HttpService.farm()
     .subscribe((data:any)=>{
       this.goldAmount = data.newvalue
-      this.messageList.push(`You earned ${data.goldupdated} at the Farm`)
+      this.listMessages.push(`You earned ${data.goldupdated} at the Farm`)
     })
   }
 
@@ -45,7 +45,7 @@ export class NinjagoldComponent implements OnInit {
     this._HttpService.cave()
     .subscribe((data:any)=>{
       this.goldAmount = data.newvalue
-      this.messageList.push(`You earned ${data.goldupdated} at the Cave`)
+      this.listMessages.push(`You earned ${data.goldupdated} at the Cave`)
     })
   }
 
@@ -54,10 +54,10 @@ export class NinjagoldComponent implements OnInit {
     .subscribe((data:any)=>{
       this.goldAmount = data.newvalue
       if(data.goldupdated<0){
-        this.messageList.push(`You lost ${data.goldupdated} at the Casino`)
+        this.listMessages.push(`You lost ${data.goldupdated} at the Casino`)
       }
       else{
-        this.messageList.push(`You earned ${data.goldupdated} at the Casino`)
+        this.listMessages.push(`You earned ${data.goldupdated} at the Casino`)
       }
     })
   }
@@ -66,7 +66,7 @@ export class NinjagoldComponent implements OnInit {
     this._HttpService.house()
     .subscribe((data:any)=>{
       this.goldAmount = data.newvalue
-      this.messageList.push(`You earned ${data.goldupdated} at the House`)
+      this.listMessages.push(`You earned ${data.goldupdated} at the House`)
     })
   }
 
