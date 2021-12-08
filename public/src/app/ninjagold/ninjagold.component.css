@@ -1,22 +1,22 @@
-.count{
+.goldcount{
     padding: 10px;
     text-align: center;
     border: 1px solid black;
     width: 20%;
 }
 
-.actions{
+.options{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     padding: 10px;
     border: 1px solid black;
-    margin: 10px 0px;
+    margin: 8px 0px;
     padding-bottom: 25px;
 }
 
-.msj2{
+.messageContainer{
     padding: 10px;
     border: 1px solid black;
     margin: 10px 0px;

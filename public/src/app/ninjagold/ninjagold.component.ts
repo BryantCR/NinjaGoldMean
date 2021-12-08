@@ -8,7 +8,7 @@ import {GoldService} from './gold.service';
 })
 export class NinjagoldComponent implements OnInit {
 
-  goldAmount:number = 0
+  amountGold:number = 0
 
   listMessages:any = []
 
@@ -36,7 +36,7 @@ export class NinjagoldComponent implements OnInit {
   farm():void{
     this._HttpService.farm()
     .subscribe((data:any)=>{
-      this.goldAmount = data.newvalue
+      this.amountGold = data.newvalue
       this.listMessages.push(`You earned ${data.goldupdated} at the Farm`)
     })
   }
@@ -44,7 +44,7 @@ export class NinjagoldComponent implements OnInit {
   cave():void{
     this._HttpService.cave()
     .subscribe((data:any)=>{
-      this.goldAmount = data.newvalue
+      this.amountGold = data.newvalue
       this.listMessages.push(`You earned ${data.goldupdated} at the Cave`)
     })
   }
@@ -52,7 +52,7 @@ export class NinjagoldComponent implements OnInit {
   casino():void{
     this._HttpService.casino()
     .subscribe((data:any)=>{
-      this.goldAmount = data.newvalue
+      this.amountGold = data.newvalue
       if(data.goldupdated<0){
         this.listMessages.push(`You lost ${data.goldupdated} at the Casino`)
       }
@@ -65,7 +65,7 @@ export class NinjagoldComponent implements OnInit {
   house():void{
     this._HttpService.house()
     .subscribe((data:any)=>{
-      this.goldAmount = data.newvalue
+      this.amountGold = data.newvalue
       this.listMessages.push(`You earned ${data.goldupdated} at the House`)
     })
   }
